@@ -1,0 +1,29 @@
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+}
+
+android {
+    namespace = "com.example.tflitedemo"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.tflitedemo"
+        minSdk = 21
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("org.tensorflow:tensorflow-lite:2.13.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.2")
+}
